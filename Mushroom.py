@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 #Data processing and feature selection
 dataset = pd.read_csv('mushrooms.csv')
@@ -13,7 +14,7 @@ X = X.apply(labelencoder_X.fit_transform) # encoding multiple columns
 onehotencoder = OneHotEncoder()
 X = onehotencoder.fit_transform(X).toarray()
 labelencoder_y = LabelEncoder()
-y = labelencoder_y.fit_transform(y,)
+y = labelencoder_y.fit_transform(y)
 
 #Model(Classifier)
 from sklearn.svm import SVC
